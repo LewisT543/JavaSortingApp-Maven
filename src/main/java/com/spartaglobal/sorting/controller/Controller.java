@@ -50,4 +50,8 @@ public class Controller {
         }
         System.out.println("");
     }
+
+    public LinkedHashMap<String, String> getAcceptableChoices() {
+        return acceptableChoices;
+    }
 }
