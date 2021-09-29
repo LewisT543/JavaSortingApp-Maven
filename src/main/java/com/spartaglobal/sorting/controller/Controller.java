@@ -17,6 +17,7 @@ public class Controller {
         put("b", "BubbleSort");
         put("m", "MergeSort");
         put("q", "QuickSort");
+        put("i", "InsertionSorter");
         put("x", "Exit Program");
     }};
     private final LinkedHashMap<String, Long> results = new LinkedHashMap<>();

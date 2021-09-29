@@ -7,6 +7,7 @@ public class ObjectFactory {
             case "b" -> mySortType = new BubbleSorter();
             case "m" -> mySortType = new MergeSorter();
             case "q" -> mySortType = new QuickSorter();
+            case "i" -> mySortType = new InsertionSorter();
             // Default to mergeSort - but I also want to keep it specifically defined.
             default -> mySortType = new MergeSorter();
         }
