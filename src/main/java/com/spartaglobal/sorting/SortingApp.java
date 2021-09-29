@@ -9,9 +9,6 @@ public class SortingApp {
         // Create the controller - currently holds null as its Sorter object.
         Controller controller = new Controller(new SorterView(), new ArrayGenerator());
         // Asks for input and adds sorter object to controller based on input.
-
-        while (true) {
-            controller.sortArray();
-        }
+        while (true) { controller.sortArray(); }
     }
 }
