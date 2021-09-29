@@ -5,6 +5,7 @@ import java.util.*;
 public class SorterView {
     private Scanner scan = new Scanner(System.in);
     public String getSortTypeInput(LinkedHashMap<String, String> acceptableChoices) {
+        // This is currently handled with a while loop but could be done with exception handling
         String choice = "";
         boolean valid = false;
         while (!valid) {
@@ -31,6 +32,7 @@ public class SorterView {
     }
 
     public int getArrayLengthInput() {
+        // This also is handled using a while loop instead of exceptions handling
         int choice = 0;
         while (choice < 1 || choice > 100000) {
             System.out.println("Please enter the desired length of array: ");
