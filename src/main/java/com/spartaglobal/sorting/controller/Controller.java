@@ -48,7 +48,6 @@ public class Controller {
         view.displaySortedArray(myArray, timeTaken);
         String resultString = acceptableChoices.get(sortType) + ":Size(" + arrayLength + ")";
         results.put(resultString, timeTaken);
-
         logger.info((resultString + " -> " + timeTaken + " (ns)"));
         fileWriter.writeResultToFile(resultString, timeTaken, logger);
 

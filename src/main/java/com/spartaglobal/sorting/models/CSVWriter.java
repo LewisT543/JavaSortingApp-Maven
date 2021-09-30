@@ -14,6 +14,7 @@ public class CSVWriter {
     private static BufferedWriter bw;
     private static PrintWriter pw;
     public void writeResultToFile(String description, long timeTaken, Logger logger) {
+        // Writes single line (result) to 'results.csv'.
         try {
             fw = new FileWriter("results.csv", true);
         } catch (IOException e) {

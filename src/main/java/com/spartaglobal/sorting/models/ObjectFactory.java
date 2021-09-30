@@ -2,6 +2,7 @@ package com.spartaglobal.sorting.models;
 
 public class ObjectFactory {
     public static Sortable createSortObject(String choice) {
+        // This is the sorter factory that will be in charge of creating a sorter object
         Sortable mySortType;
         switch(choice.toLowerCase()) {
             case "b" -> mySortType = new BubbleSorter();

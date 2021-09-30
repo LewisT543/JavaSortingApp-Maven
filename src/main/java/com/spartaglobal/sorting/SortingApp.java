@@ -17,3 +17,13 @@ public class SortingApp {
         while (true) { controller.sortArray(); }
     }
 }
+/* GUI
+I honestly don't think I want to do a GUI, but I could make the CLI look WAAAAAY nicer. Tables and the like.
+*/
+/* Generics... I think...
+In order to implement generic typed sorting, it would require each object class to implement Comparable<T>.
+Within this interface we would define the method signature for isEqual(), lessThan(), greaterThan(). This would force
+us to implement these methods within the new object classes. e.g. Rectangle would have a lessThan(this, other) method.
+This means that the implementation of our sorting algorithms doesn't need to change at all, we just need to add the
+Comparable interface and change the typing in the methods to <E>.
+*/
