@@ -13,3 +13,38 @@
 [INFO] 2021-09-30 13:19:16,186 Class:ResultsLogger Method:sortArray MergeSort:Size(1000) -> 1136300 (ns)
 [INFO] 2021-09-30 13:19:20,574 Class:ResultsLogger Method:sortArray QuickSort:Size(1000) -> 679900 (ns)
 [INFO] 2021-09-30 13:19:24,401 Class:ResultsLogger Method:sortArray InsertionSorter:Size(1000) -> 4375900 (ns)
+[INFO] 2021-09-30 22:45:49,914 Class:ResultsLogger Method:sortArray BinaryTree:Size(5) -> 19203701 (ns)
+[INFO] 2021-09-30 22:59:46,909 Class:ResultsLogger Method:sortArray BinaryTree:Size(10) -> 646712349901 (ns)
+[ERROR] 2021-10-01 00:03:19,326 Class:ResultsLogger Method:sortArray Duplicates will be removed in a binary tree sort.
+[INFO] 2021-10-01 00:03:19,358 Class:ResultsLogger Method:sortArray BinaryTree:Size(10) -> 5704599 (ns)
+[ERROR] 2021-10-01 00:04:05,382 Class:ResultsLogger Method:sortArray Duplicates will be removed in a binary tree sort.
+[ERROR] 2021-10-01 00:07:10,723 Class:ResultsLogger Method:sortArray Duplicates will be removed in a binary tree sort.
+[INFO] 2021-10-01 00:07:10,759 Class:ResultsLogger Method:sortArray BinaryTree:Size(10) -> 6076601 (ns)
+[ERROR] 2021-10-01 00:08:01,590 Class:ResultsLogger Method:sortArray Duplicates will be removed in a binary tree sort.
+[INFO] 2021-10-01 00:08:11,028 Class:ResultsLogger Method:sortArray BinaryTree:Size(10) -> 9395654600 (ns)
+[ERROR] 2021-10-01 00:10:36,908 Class:ResultsLogger Method:sortArray Duplicates will be removed in a binary tree sort.
+[INFO] 2021-10-01 00:10:36,956 Class:ResultsLogger Method:sortArray null:Size(10) -> 6945701 (ns)
+[ERROR] 2021-10-01 00:11:53,716 Class:ResultsLogger Method:sortArray Duplicates will be removed in a binary tree sort.
+[INFO] 2021-10-01 00:11:53,761 Class:ResultsLogger Method:sortArray null:Size(10) -> 6680001 (ns)
+[ERROR] 2021-10-01 00:12:27,997 Class:ResultsLogger Method:sortArray Duplicates will be removed in a binary tree sort.
+[INFO] 2021-10-01 00:12:28,048 Class:ResultsLogger Method:sortArray BinaryTree:Size(10) -> 6648300 (ns)
+[ERROR] 2021-10-01 00:16:08,948 Class:ResultsLogger Method:sortArray Duplicates will be removed in a binary tree sort.
+[INFO] 2021-10-01 00:16:08,991 Class:ResultsLogger Method:sortArray BinaryTree:Size(10) -> 7534000 (ns)
+[ERROR] 2021-10-01 00:16:23,523 Class:ResultsLogger Method:sortArray Duplicates will be removed in a binary tree sort.
+[INFO] 2021-10-01 00:16:23,560 Class:ResultsLogger Method:sortArray BinaryTree:Size(10) -> 6477500 (ns)
+[ERROR] 2021-10-01 00:21:40,570 Class:ResultsLogger Method:sortArray Duplicates will be removed in a binary tree sort.
+[INFO] 2021-10-01 00:21:40,619 Class:ResultsLogger Method:sortArray BinaryTree:Size(10) -> 25959399 (ns)
+[ERROR] 2021-10-01 00:22:56,983 Class:ResultsLogger Method:sortArray Duplicates will be removed in a binary tree sort.
+[INFO] 2021-10-01 00:22:57,029 Class:ResultsLogger Method:sortArray BinaryTree:Size(5) -> 22329500 (ns)
+[ERROR] 2021-10-01 00:23:48,499 Class:ResultsLogger Method:sortArray Duplicates will be removed in a binary tree sort.
+[INFO] 2021-10-01 00:23:48,544 Class:ResultsLogger Method:sortArray BinaryTree:Size(5) -> 23296700 (ns)
+[ERROR] 2021-10-01 00:25:38,386 ResultsLogger.sortArray - Duplicates will be removed in a binary tree sort.
+[INFO] 2021-10-01 00:25:38,433 ResultsLogger.sortArray - BinaryTree:Size(10) -> 24352300 (ns)
+[INFO] 2021-10-01 00:25:40,848 ResultsLogger.sortArray - BubbleSort:Size(5) -> 5500 (ns)
+[INFO] 2021-10-01 00:25:43,320 ResultsLogger.sortArray - MergeSort:Size(5) -> 25500 (ns)
+[INFO] 2021-10-01 00:25:47,449 ResultsLogger.sortArray - QuickSort:Size(5) -> 15600 (ns)
+[INFO] 2021-10-01 00:25:50,736 ResultsLogger.sortArray - InsertionSorter:Size(5) -> 2800 (ns)
+[ERROR] 2021-10-01 00:25:53,943 ResultsLogger.sortArray - Duplicates will be removed in a binary tree sort.
+[INFO] 2021-10-01 00:25:53,944 ResultsLogger.sortArray - BinaryTree:Size(5) -> 224200 (ns)
+[ERROR] 2021-10-01 00:29:29,107 ResultsLogger.sortArray - Duplicates will be removed in a binary tree sort.
+[INFO] 2021-10-01 00:29:29,154 ResultsLogger.sortArray - BinaryTree:Size(10) -> 23930800 (ns)

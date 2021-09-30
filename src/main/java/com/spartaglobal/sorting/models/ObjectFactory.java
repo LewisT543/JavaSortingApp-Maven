@@ -9,6 +9,7 @@ public class ObjectFactory {
             case "m" -> mySortType = new MergeSorter();
             case "q" -> mySortType = new QuickSorter();
             case "i" -> mySortType = new InsertionSorter();
+            case "bt" -> mySortType = new BinaryTreeSorter();
             // Default to mergeSort - but I also want to keep it specifically defined.
             default -> mySortType = new MergeSorter();
         }

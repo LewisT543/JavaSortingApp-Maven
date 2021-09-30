@@ -12,16 +12,16 @@ public class CSVWriter {
     private static FileWriter fw;
     private static BufferedWriter bw;
     private static PrintWriter pw;
-    public void writeResultToFile(String description, long timeTaken, Logger logger) {
+    public void writeResultToFile(String description, long timeTaken) {
         // Writes single line (result) to 'results.csv'.
         try {
-            FileWriter fw = new FileWriter("results.csv", true);
+            fw = new FileWriter("results.csv", true);
         } catch (IOException e) {
-            logger.error("Unable to save to CSV.");
+            System.out.println("THIS IS MY FLAG.");
             e.fillInStackTrace();
         }
-        BufferedWriter bw = new BufferedWriter(fw);
-        PrintWriter pw = new PrintWriter(bw);
+        bw = new BufferedWriter(fw);
+        pw = new PrintWriter(bw);
         int index = description.indexOf(":");
         String sortType = description.substring(0, index);
         String sizeString = description.substring(index + 6, description.indexOf(")"));

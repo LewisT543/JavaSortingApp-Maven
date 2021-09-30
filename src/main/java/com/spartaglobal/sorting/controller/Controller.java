@@ -1,9 +1,6 @@
 package com.spartaglobal.sorting.controller;
 
-import com.spartaglobal.sorting.models.ArrayGenerator;
-import com.spartaglobal.sorting.models.CSVWriter;
-import com.spartaglobal.sorting.models.ObjectFactory;
-import com.spartaglobal.sorting.models.Sortable;
+import com.spartaglobal.sorting.models.*;
 import com.spartaglobal.sorting.views.SorterView;
 import org.apache.log4j.Logger;
 
@@ -22,6 +19,7 @@ public class Controller {
         put("m", "MergeSort");
         put("q", "QuickSort");
         put("i", "InsertionSorter");
+        put("bt", "BinaryTree");
         put("x", "Exit Program");
     }};
     private final LinkedHashMap<String, Long> results = new LinkedHashMap<>();
@@ -45,11 +43,16 @@ public class Controller {
         sorter.sort(myArray);
         long stop = nanoTime();
         long timeTaken = stop - start;
+        // Have to print extra message for Binary Tree, this doesn't feel ideal
+        if (sorter instanceof BinaryTreeSorter) {
+            logger.error("Duplicates will be removed in a binary tree sort.");
+            System.out.println("----> Duplicates removed <----");
+        }
         view.displaySortedArray(myArray, timeTaken);
         String resultString = acceptableChoices.get(sortType) + ":Size(" + arrayLength + ")";
         results.put(resultString, timeTaken);
         logger.info((resultString + " -> " + timeTaken + " (ns)"));
-        fileWriter.writeResultToFile(resultString, timeTaken, logger);
+        fileWriter.writeResultToFile(resultString, timeTaken);
 
         printResults();
     }
@@ -61,9 +64,5 @@ public class Controller {
             i ++;
         }
         System.out.println("");
-    }
-
-    public LinkedHashMap<String, String> getAcceptableChoices() {
-        return acceptableChoices;
     }
 }

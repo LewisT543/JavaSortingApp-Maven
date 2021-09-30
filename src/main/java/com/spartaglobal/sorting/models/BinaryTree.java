@@ -2,110 +2,86 @@ package com.spartaglobal.sorting.models;
 
 import java.util.ArrayList;
 
-public class BinaryTree implements Sortable {
-    private static class TreeNode {
-        private int value;
-        private TreeNode leftNode;
-        private TreeNode rightNode;
+public class BinaryTree {
+    private class Node {
+        private Integer key;
+        private Node left;
+        private Node right;
+        private int index;
 
-        public TreeNode(int value) {
-            this.value = value;
-        }
-
-        public int getValue() {
-            return value;
-        }
-
-        public void setValue(int value) {
-            this.value = value;
-        }
-
-        public TreeNode getLeftNode() {
-            return leftNode;
-        }
-
-        public void setLeftNode(TreeNode leftNode) {
-            this.leftNode = leftNode;
-        }
-
-        public TreeNode getRightNode() {
-            return rightNode;
-        }
-
-        public void setRightNode(TreeNode rightNode) {
-            this.rightNode = rightNode;
+        public Node(Integer key, int index) {
+            this.key = key;
+            this.index = index;
         }
 
         @Override
         public String toString() {
-            return "TreeNode{" +
-                    "value=" + value +
-                    ", leftNode=" + leftNode +
-                    ", rightNode=" + rightNode +
+            return " Node{" +
+                    "k=" + key +
+                    ",l=" + left +
+                    ",r=" + right +
+                    ",i=" + index +
                     '}';
         }
     }
-    private TreeNode root = null;
-    public void sort(int[] array) {
-        BinaryTree bTree = createBinaryTree(array);
-        System.out.println(bTree.root.toString());
-    }
 
-    private BinaryTree createBinaryTree(int[] array) {
-        BinaryTree bTree = new BinaryTree();
-        for (int number : array) {
-            bTree.add(number);
-        }
-        return bTree;
-    }
-    private void add(int nextInt) {
-        root = addRecursive(root, nextInt);
-    }
-    private TreeNode addRecursive(TreeNode current, int value) {
-        if (current == null) { return new TreeNode(value); }
-        if (value < current.value) { current.leftNode = addRecursive(current.leftNode, value); }
-        else if (value > current.value) { current.rightNode = addRecursive(current.rightNode, value); }
-        else { return current; }
-        return current;
-    }
+    private Node root;
+    private int size = 0;
 
-    private int[] flattenToIntArray(BinaryTree bTree) {
-        bTree.flatten(bTree.root);
-        bTree.inOrder(bTree.root);
-        return traversalArray.stream().mapToInt(i->i).toArray();
-    }
-    public void flatten(TreeNode node) {
-        // Base case
-        if (node == null) { return; }
-        // if Leaf node
-        if (node.getLeftNode() == null && node.getRightNode() == null) { return; }
-        // If node.leftNode isn't null we have to change it to node.rightNode by moving it right recursively
-        if (node.getLeftNode() != null) {
-            flatten(node.getLeftNode());
-            // temp node to hold the right node
-            // Make the shift
-            TreeNode tempNode = node.getRightNode();
-            node.setRightNode(node.getLeftNode());
-            node.setLeftNode(null);
-            // Go all the way down the right side of the tree checking for where to insert node
-            TreeNode current = node.getRightNode();
-            while (current.getRightNode() != null) {
-                current = current.getRightNode();
-            }
-            current.setRightNode(tempNode);
-        }
-        // Do same for rightNode
-        flatten(node.getRightNode());
-    }
-    public ArrayList<Integer> traversalArray = new ArrayList<>();
-    public void inOrder(TreeNode node)
-    {
-        // Base Condition
-        if (node == null)
+    public void put(int[] arr) {
+        if (size >= arr.length)
             return;
-        inOrder(node.getLeftNode());
-        traversalArray.add(node.getValue());
-        inOrder(node.getRightNode());
+        root = put(root, arr[size], size);
+        size++;
+        put(arr);
     }
 
+    private Node put(Node node, int key, int index) {
+        if (node == null)
+            return new Node(key, index);
+        int cmp = Integer.valueOf(key).compareTo(node.key);
+        if (cmp < 0)
+            node.left = put(node.left, key, index);
+        else if (cmp > 0)
+            node.right = put(node.right, key, index);
+        else
+            node.key = key;
+        return node;
+    }
+
+    public int[] keys() {
+        int[] result = new int[size];
+        get(root, result, 0);
+        return result;
+    }
+
+    public void get(Node node, int[] result, int i) {
+        if (i >= result.length || node == null)
+            return;
+        result[node.index] = node.key;
+        get(node.left, result, ++i);
+        get(node.right, result, ++i);
+    }
+
+    private ArrayList<Integer> arrayList = null;
+    public int[] createIntArrayFromBST(BinaryTree bTree) {
+        if (arrayList == null) {
+            arrayList = new ArrayList<>();
+        }
+        inOrder(bTree.root);
+        return arrayList.stream().mapToInt(i->i).toArray();
+    }
+
+    private void inOrder(Node node) {
+        if (node == null) {
+            return;
+        }
+        inOrder(node.left);
+        arrayList.add(node.key);
+        inOrder(node.right);
+    }
+
+    public Node getRoot() {
+        return root;
+    }
 }

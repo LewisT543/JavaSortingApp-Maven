@@ -4,3 +4,15 @@ BubbleSort,1000,7698600
 MergeSort,1000,1136300
 QuickSort,1000,679900
 InsertionSorter,1000,4375900
+BinaryTree,10,7534000
+BinaryTree,10,6477500
+BinaryTree,10,25959399
+BinaryTree,5,22329500
+BinaryTree,5,23296700
+BinaryTree,10,24352300
+BubbleSort,5,5500
+MergeSort,5,25500
+QuickSort,5,15600
+InsertionSorter,5,2800
+BinaryTree,5,224200
+BinaryTree,10,23930800
