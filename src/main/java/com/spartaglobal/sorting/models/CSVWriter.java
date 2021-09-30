@@ -2,7 +2,6 @@ package com.spartaglobal.sorting.models;
 
 import org.apache.log4j.Logger;
 
-import javax.swing.JOptionPane;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -16,13 +15,13 @@ public class CSVWriter {
     public void writeResultToFile(String description, long timeTaken, Logger logger) {
         // Writes single line (result) to 'results.csv'.
         try {
-            fw = new FileWriter("results.csv", true);
+            FileWriter fw = new FileWriter("results.csv", true);
         } catch (IOException e) {
-            logger.error("Unable to connect to CSV.");
+            logger.error("Unable to save to CSV.");
             e.fillInStackTrace();
         }
-        bw = new BufferedWriter(fw);
-        pw = new PrintWriter(bw);
+        BufferedWriter bw = new BufferedWriter(fw);
+        PrintWriter pw = new PrintWriter(bw);
         int index = description.indexOf(":");
         String sortType = description.substring(0, index);
         String sizeString = description.substring(index + 6, description.indexOf(")"));

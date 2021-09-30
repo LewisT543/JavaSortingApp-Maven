@@ -1,4 +1,4 @@
-package com.spartaglobal.sorting.tests.views;
+/* package com.spartaglobal.sorting.tests.views;
 
 import com.spartaglobal.sorting.controller.Controller;
 import com.spartaglobal.sorting.models.ArrayGenerator;
@@ -27,7 +27,7 @@ public class SorterViewTest {
     }
 }
 // Courtesy of Neil
-/* String data = "Hello, World!\r\n";
+ String data = "Hello, World!\r\n";
 InputStream stdin = System.in;
 try {
   System.setIn(new ByteArrayInputStream(data.getBytes()));
