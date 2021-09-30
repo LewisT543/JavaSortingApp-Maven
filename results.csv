@@ -1,0 +1,6 @@
+BubbleSort,20,43700
+BubbleSort,100,867000
+BubbleSort,1000,7698600
+MergeSort,1000,1136300
+QuickSort,1000,679900
+InsertionSorter,1000,4375900

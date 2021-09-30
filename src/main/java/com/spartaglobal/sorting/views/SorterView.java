@@ -1,5 +1,7 @@
 package com.spartaglobal.sorting.views;
 
+import com.spartaglobal.sorting.models.CSVWriter;
+
 import java.util.*;
 
 public class SorterView {
@@ -15,7 +17,7 @@ public class SorterView {
                 valid = true;
         }
         if (choice.equals("x")) {
-            System.out.println("Program exiting - thanks for... sorting?");
+            System.out.println("Program exiting - Thanks for sorting.");
             System.exit(0);
         }
         return choice;

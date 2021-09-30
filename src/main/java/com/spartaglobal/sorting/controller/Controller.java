@@ -1,9 +1,11 @@
 package com.spartaglobal.sorting.controller;
 
 import com.spartaglobal.sorting.models.ArrayGenerator;
+import com.spartaglobal.sorting.models.CSVWriter;
 import com.spartaglobal.sorting.models.ObjectFactory;
 import com.spartaglobal.sorting.models.Sortable;
 import com.spartaglobal.sorting.views.SorterView;
+import org.apache.log4j.Logger;
 
 import java.util.LinkedHashMap;
 
@@ -13,6 +15,8 @@ public class Controller {
     private Sortable sorter;
     private final SorterView view;
     private final ArrayGenerator generator;
+    private final Logger logger;
+    private final CSVWriter fileWriter;
     private final LinkedHashMap<String, String> acceptableChoices = new LinkedHashMap<>() {{
         put("b", "BubbleSort");
         put("m", "MergeSort");
@@ -22,10 +26,12 @@ public class Controller {
     }};
     private final LinkedHashMap<String, Long> results = new LinkedHashMap<>();
 
-    public Controller(SorterView view, ArrayGenerator generator) {
+    public Controller(SorterView view, ArrayGenerator generator, Logger logger, CSVWriter fileWriter) {
         this.sorter = null;
         this.view = view;
-        this.generator = generator;
+        this.generator = generator;;
+        this.logger = logger;
+        this.fileWriter = fileWriter;
     }
 
     public void sortArray() {
@@ -38,8 +44,12 @@ public class Controller {
         long start = nanoTime();
         sorter.sort(myArray);
         long stop = nanoTime();
-        view.displaySortedArray(myArray, (stop - start));
-        results.put(acceptableChoices.get(sortType) + ":Size(" + arrayLength + ")"  , (stop-start));
+        long timeTaken = stop - start;
+        view.displaySortedArray(myArray, timeTaken);
+        String resultString = acceptableChoices.get(sortType) + ":Size(" + arrayLength + ")";
+        results.put(resultString, timeTaken);
+        logger.info((resultString + " -> " + timeTaken + " (ns)"));
+        fileWriter.writeResultToFile(resultString, timeTaken);
         printResults();
     }
 

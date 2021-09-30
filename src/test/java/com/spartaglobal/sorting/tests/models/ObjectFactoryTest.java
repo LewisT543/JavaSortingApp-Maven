@@ -12,11 +12,13 @@ public class ObjectFactoryTest {
         Sortable bubbleSorter = createSortObject("b");
         Sortable mergeSorter = createSortObject("m");
         Sortable quickSorter = createSortObject("q");
+        Sortable insertionSorter = createSortObject("i");
         Sortable defaultMergeSorter = createSortObject("m");
 
         assertNotNull(bubbleSorter);
         assertNotNull(mergeSorter);
         assertNotNull(quickSorter);
+        assertNotNull(insertionSorter);
         assertNotNull(defaultMergeSorter);
     }
 }
