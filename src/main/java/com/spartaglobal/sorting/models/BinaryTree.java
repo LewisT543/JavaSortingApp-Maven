@@ -3,7 +3,7 @@ package com.spartaglobal.sorting.models;
 import java.util.ArrayList;
 
 public class BinaryTree {
-    private class Node {
+    public class Node {
         private Integer key;
         private Node left;
         private Node right;

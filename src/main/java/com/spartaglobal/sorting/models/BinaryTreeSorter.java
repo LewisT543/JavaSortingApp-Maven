@@ -1,6 +1,5 @@
 package com.spartaglobal.sorting.models;
 
-// Change 2 back to "" once ive got this working
 public class BinaryTreeSorter implements Sortable {
     @Override
     public void sort(int[] array) {
