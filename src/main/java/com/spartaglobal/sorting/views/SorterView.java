@@ -5,13 +5,19 @@ import com.spartaglobal.sorting.models.CSVWriter;
 import java.util.*;
 
 public class SorterView {
+
+    /*
+    NOTE: Going to have to add another input view for type of Object[] to be sorted
+    + and another
+     */
+
+    // USER INPUT METHODS
     private Scanner scan = new Scanner(System.in);
     public String getSortTypeInput(LinkedHashMap<String, String> acceptableChoices) {
-        // This is currently handled with a while loop but could be done with exception handling
         String choice = "";
         boolean valid = false;
         while (!valid) {
-            System.out.println(buildChoicesString(acceptableChoices));
+            System.out.println(buildChoicesString(acceptableChoices, "sorting algorithm"));
             choice = scan.next();
             if (acceptableChoices.containsKey(choice.toLowerCase()))
                 valid = true;
@@ -23,9 +29,25 @@ public class SorterView {
         return choice;
     }
 
-    private String buildChoicesString(LinkedHashMap<String, String> acceptableChoices) {
+    public String getObjectTypeInput(LinkedHashMap<String, String> acceptableChoices) {
+        String choice = "";
+        boolean valid = false;
+        while (!valid) {
+            System.out.println(buildChoicesString(acceptableChoices, "object type"));
+            choice = scan.next();
+            if (acceptableChoices.containsKey(choice.toLowerCase()))
+                valid = true;
+        }
+        if (choice.equals("x")) {
+            System.out.println("Program exiting - Thanks for sorting.");
+            System.exit(0);
+        }
+        return choice;
+    }
+
+    private String buildChoicesString(LinkedHashMap<String, String> acceptableChoices, String choiceType) {
         StringBuilder myString = new StringBuilder();
-        myString.append("Please select a sorting algorithm:\s");
+        myString.append("Please select a :").append(choiceType).append("\s");
         for (String choice : acceptableChoices.keySet()) {
             myString.append("\n -> ").append("'").append(choice).append("'").append(" for ")
                     .append(acceptableChoices.get(choice)).append("\s");
@@ -48,21 +70,42 @@ public class SorterView {
         return choice;
     }
 
-    public void displayUnsortedArray(int[] arr) {
+    // DISPLAY METHODS
+//    public void displayUnsortedArray(int[] arr) {
+//        System.out.println("----Unsorted int[] array----");
+//        printIntArray(arr);
+//    }
+//
+//    public void displaySortedArray(int[] arr, long timeTaken) {
+//        System.out.println("----Sorted int[] array----");
+//        printIntArray(arr);
+//        System.out.println("Time elapsed: " + timeTaken + "\n");
+//    }
+//
+//    private static void printIntArray(int[] arr) {
+//        for (int number : arr) {
+//            System.out.print(number + ", ");
+//        }
+//        System.out.print("\n");
+//    }
+
+    public void displayUnsortedArray(Object[] arr) {
         System.out.println("----Unsorted int[] array----");
-        printIntArray(arr);
+        printArray(arr);
     }
 
-    public void displaySortedArray(int[] arr, long timeTaken) {
+    public void displaySortedArray(Object[] arr, long timeTaken) {
         System.out.println("----Sorted int[] array----");
-        printIntArray(arr);
+        printArray(arr);
         System.out.println("Time elapsed: " + timeTaken + "\n");
     }
 
-    private static void printIntArray(int[] arr) {
-        for (int number : arr) {
-            System.out.print(number + ", ");
+    private static void printArray(Object[] arr) {
+        for (Object obj : arr) {
+            System.out.print(obj + ", ");
         }
         System.out.print("\n");
     }
+
+    // EXPERIMENTAL
 }

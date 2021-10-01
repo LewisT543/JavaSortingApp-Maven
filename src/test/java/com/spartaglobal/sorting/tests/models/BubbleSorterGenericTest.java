@@ -111,4 +111,38 @@ public class BubbleSorterGenericTest {
         System.out.println("Arrays.sort(): " + Arrays.toString(personArray2));
         Assertions.assertEquals(Arrays.toString(personArray2), Arrays.toString(personArray));
     }
+
+    @Test
+    public void theGenericSortWithIntProblem () {
+        Generator gen = new Generator();
+        Person[] personsArray = new Person[] {
+                new Person(1, "Jeff", 175),
+                new Person(2, "Tim", 188),
+                new Person(3, "Rodge", 160),
+                new Person(4, "Simon", 165),
+                new Person(5, "Alan", 165),
+        };
+        Rectangle[] rectangleArray = new Rectangle[] {
+                new Rectangle(5, 10),
+                new Rectangle(5, 12),
+                new Rectangle( 5, 15),
+                new Rectangle(5, 11),
+                new Rectangle( 5, 13)
+        };
+        int[] intArray = new int[] { 3, 5, 4 , 6, 0 };
+
+        BubbleSorterGeneric sorter = new BubbleSorterGeneric();
+
+        sorter.sort(personsArray);
+        sorter.sort(rectangleArray);
+        // Not quite sure how this works, but it does exactly what I want it to.
+
+        Integer[] integerArray = Arrays.stream( intArray ).boxed().toArray( Integer[]::new );
+        sorter.sort(integerArray);
+
+        System.out.println(Arrays.toString(personsArray));
+        System.out.println(Arrays.toString(rectangleArray));
+        System.out.println(Arrays.toString(integerArray));
+
+    }
 }

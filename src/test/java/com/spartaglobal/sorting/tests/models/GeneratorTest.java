@@ -28,6 +28,17 @@ public class GeneratorTest {
     }
 
     @Test
+    public void givenLength10_ReturnIntegerArrayLen10() {
+        Generator gen = new Generator();
+        Integer[] array = gen.generateIntegerArray(10);
+        for (Integer number : array) {
+            assertTrue(number > 0);
+            assertTrue(number < 100);
+        }
+        assertEquals(10, array.length);
+    }
+
+    @Test
     public void generateRandomStringTest() {
         Generator gen = new Generator();
         String randString = gen.generateRandomLengthRandomString();

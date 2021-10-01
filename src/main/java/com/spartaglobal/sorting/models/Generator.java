@@ -9,7 +9,7 @@ public class Generator {
     // Not currently used but might be at some point
     private int[] mostRecentUnsortedIntArray;
     private Object[] mostRecentUnsortedObjectArray;
-    private final char[] randomCharChoices = new char[] {
+    private final char[] charChoices = new char[] {
             'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M',
             'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z',
             'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm',
@@ -25,7 +25,17 @@ public class Generator {
         mostRecentUnsortedIntArray = myArr;
         return myArr;
     }
-
+// -----------------------------------------------------------//
+    public Integer[] generateIntegerArray(int arrayLength) {
+        Integer[] myArr = new Integer[arrayLength];
+        Random r = new Random();
+        for (int i = 0; i < arrayLength; i++) {
+            myArr[i] = (int) (Math.random() * 100);
+        }
+        mostRecentUnsortedObjectArray = myArr;
+        return myArr;
+    }
+//
     public Rectangle[] generateRectArray(int arrayLength) {
         Rectangle[] myArr = new Rectangle[arrayLength];
         for (int i = 0; i < arrayLength; i++) {
@@ -34,7 +44,7 @@ public class Generator {
         mostRecentUnsortedObjectArray = myArr;
         return myArr;
     }
-
+//
     public Person[] generatePeopleArray(int arrayLength) {
         Person[] myArr = new Person[arrayLength];
         for (int i = 0; i < arrayLength; i++) {
@@ -43,12 +53,12 @@ public class Generator {
         mostRecentUnsortedObjectArray = myArr;
         return myArr;
     }
-
+// --------------------------------------------------------- //
     public String generateRandomLengthRandomString() {
         int length = (int)(Math.random() * 10);
         StringBuilder str = new StringBuilder();
         for (int i = 1; i <= length; i++) {
-            str.append(randomCharChoices[(int)(Math.random() * randomCharChoices.length)]);
+            str.append(charChoices[(int)(Math.random() * charChoices.length)]);
         }
         return str.toString();
     }

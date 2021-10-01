@@ -16,13 +16,18 @@ public class Controller {
     private final Generator generator;
     private final Logger logger;
     private final CSVWriter fileWriter;
-    private final LinkedHashMap<String, String> acceptableChoices = new LinkedHashMap<>() {{
+    private final LinkedHashMap<String, String> SORT_CHOICES = new LinkedHashMap<>() {{
         put("b", "BubbleSort");
         put("m", "MergeSort");
         put("q", "QuickSort");
         put("i", "InsertionSorter");
         put("bt", "BinaryTree");
         put("x", "Exit Program");
+    }};
+    private final LinkedHashMap<String, String> OBJECT_CHOICES = new LinkedHashMap<>() {{
+        put("i", "Integers");
+        put("r", "Rectangles");
+        put("p", "People");
     }};
     private final LinkedHashMap<String, Long> results = new LinkedHashMap<>();
 
@@ -35,18 +40,28 @@ public class Controller {
     }
 
     public void sortArray() {
-        String sortType = view.getSortTypeInput(acceptableChoices);
-        int arrayLength = view.getArrayLengthInput();
+        String sortType = view.getSortTypeInput(SORT_CHOICES);
         sorter = ObjectFactory.createSortObject(sortType);
+        // String objectType = view.getObjectTypeInput(OBJECT_CHOICES);
+        int arrayLength = view.getArrayLengthInput();
+        
+//        Object[] myOtherArray;
+//        switch (objectType) {
+//            case "i" -> myOtherArray = generator.generateIntegerArray(arrayLength);
+//            case "r" -> myOtherArray = generator.generateRectArray(arrayLength);
+//            case "p" -> myOtherArray = generator.generatePeopleArray(arrayLength);
+//        }
+        
         int[] myArray = generator.generateIntArray(arrayLength);
-
-        view.displayUnsortedArray(myArray);
+        
+        // To fix this back to using myArray: Ctrl+R for find and replace   myOtherArray   with   myArray          
+        view.displayUnsortedArray(myArray); // <- This is broken because of generic typing.
         long start = nanoTime();
         sorter.sort(myArray);
         long stop = nanoTime();
         long timeTaken = stop - start;
         view.displaySortedArray(myArray, timeTaken);
-        String resultString = acceptableChoices.get(sortType) + ":Size(" + arrayLength + ")";
+        String resultString = SORT_CHOICES.get(sortType) + ":Size(" + arrayLength + ")";
         results.put(resultString, timeTaken);
         logger.info((resultString + " -> " + timeTaken + " (ns)"));
         fileWriter.writeResultToFile(resultString, timeTaken);
