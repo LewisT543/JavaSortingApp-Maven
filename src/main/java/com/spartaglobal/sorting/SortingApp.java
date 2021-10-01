@@ -16,12 +16,13 @@ public class SortingApp {
     }
 }
 /* GUI
-I honestly don't think I want to do a GUI, but I could make the CLI look WAAAAAY nicer. Tables and the like.
+I honestly don't think I want to do a GUI, but I could make the CLI look a bit nicer.
 */
-/* Generics... I think...
-In order to implement generic typed sorting, it would require each object class to implement Comparable<T>.
-Within this interface we would define the method signature for compare(). This would force
-us to implement these methods within the new object classes. e.g. Rectangle would have a compare(this, other) method.
-This means that the implementation of our sorting algorithms doesn't need to change at all, we just need to add the
-Comparable interface and change the typing in the methods to accept <E> generic types.
+/* On generic method migration
+Almost implemented - add in functionality or at least conversion methods for Integer[] typing instead of int[].
+Finished wo Tests  - some generators need testing more rigorously
+Still to do        - BTS, Insertion, Merge, Quick
+                   - ReadMe...
+Done               - BubbleSortGeneric + tests
+                   - controller and views methods updated for Object[] typing
 */
