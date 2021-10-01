@@ -1,6 +1,6 @@
 package com.spartaglobal.sorting.tests.models;
 
-import com.spartaglobal.sorting.models.ArrayGenerator;
+import com.spartaglobal.sorting.models.Generator;
 import com.spartaglobal.sorting.models.BinaryTree;
 import com.spartaglobal.sorting.models.BinaryTreeSorter;
 import org.junit.jupiter.api.Test;
@@ -47,7 +47,7 @@ public class BinaryTreeSorterTest {
 
     @Test
     public void givenArrayLen20_ReturnSortedLen20Array() {
-        ArrayGenerator arrGen = new ArrayGenerator();
+        Generator arrGen = new Generator();
         int[] myArray = arrGen.generateIntArray(20);
         int[] expectedArray = Arrays.copyOf(myArray, myArray.length);
         Arrays.sort(expectedArray);
@@ -58,7 +58,7 @@ public class BinaryTreeSorterTest {
     }
     @Test
     public void givenArrayLen50_ReturnSortedLen50Array() {
-        ArrayGenerator arrGen = new ArrayGenerator();
+        Generator arrGen = new Generator();
         int[] myArray = arrGen.generateIntArray(50);
         int[] expectedArray = Arrays.copyOf(myArray, myArray.length);
         Arrays.sort(expectedArray);
@@ -69,7 +69,7 @@ public class BinaryTreeSorterTest {
     }
     @Test
     public void givenArrayLen500_ReturnSortedLen500Array() {
-        ArrayGenerator arrGen = new ArrayGenerator();
+        Generator arrGen = new Generator();
         int[] myArray = arrGen.generateIntArray(500);
         int[] expectedArray = Arrays.copyOf(myArray, myArray.length);
         Arrays.sort(expectedArray);

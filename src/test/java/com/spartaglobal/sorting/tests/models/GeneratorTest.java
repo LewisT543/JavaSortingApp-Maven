@@ -1,14 +1,14 @@
 package com.spartaglobal.sorting.tests.models;
 
-import com.spartaglobal.sorting.models.ArrayGenerator;
+import com.spartaglobal.sorting.models.Generator;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class ArrayGeneratorTest {
+public class GeneratorTest {
     @Test
     public void givenLength10_ReturnArrayLen10() {
-        ArrayGenerator gen = new ArrayGenerator();
+        Generator gen = new Generator();
         int[] array = gen.generateIntArray(10);
         for (int number : array) {
             assertTrue(number > 0);
@@ -18,7 +18,7 @@ public class ArrayGeneratorTest {
     }
     @Test
     public void givenLength20_ReturnArrayLen20() {
-        ArrayGenerator gen = new ArrayGenerator();
+        Generator gen = new Generator();
         int[] array = gen.generateIntArray(20);
         for (int number : array) {
             assertTrue(number > 0);
@@ -28,9 +28,22 @@ public class ArrayGeneratorTest {
     }
 
     @Test
+    public void generateRandomStringTest() {
+        Generator gen = new Generator();
+        String randString = gen.generateRandomLengthRandomString();
+        System.out.println(randString);
+        assertAll(
+                () -> assertNotNull(randString),
+                () -> assertTrue(randString.length() > 0),
+                () -> assertTrue(randString.length() < 11),
+                () -> assertTrue(randString.matches("[a-zA-Z]+"))
+        );
+    }
+
+    @Test
     public void returnMostRecentUnsortedArrayTest() {
-        ArrayGenerator myGen = new ArrayGenerator();
+        Generator myGen = new Generator();
         int[] array = myGen.generateIntArray(10);
-        assertEquals(array, myGen.getMostRecentUnsortedArray());
+        assertEquals(array, myGen.getMostRecentUnsortedIntArray());
     }
 }

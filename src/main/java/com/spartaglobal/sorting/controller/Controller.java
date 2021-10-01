@@ -13,7 +13,7 @@ import static java.lang.System.nanoTime;
 public class Controller {
     private Sortable sorter;
     private final SorterView view;
-    private final ArrayGenerator generator;
+    private final Generator generator;
     private final Logger logger;
     private final CSVWriter fileWriter;
     private final LinkedHashMap<String, String> acceptableChoices = new LinkedHashMap<>() {{
@@ -26,7 +26,7 @@ public class Controller {
     }};
     private final LinkedHashMap<String, Long> results = new LinkedHashMap<>();
 
-    public Controller(SorterView view, ArrayGenerator generator, Logger logger, CSVWriter fileWriter) {
+    public Controller(SorterView view, Generator generator, Logger logger, CSVWriter fileWriter) {
         this.sorter = null;
         this.view = view;
         this.generator = generator;;
