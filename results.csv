@@ -16,3 +16,5 @@ QuickSort,5,15600
 InsertionSorter,5,2800
 BinaryTree,5,224200
 BinaryTree,10,23930800
+BinaryTree,5,22674100
+BinaryTree,10000,97585100

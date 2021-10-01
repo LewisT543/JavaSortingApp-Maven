@@ -8,6 +8,8 @@ import java.util.LinkedHashMap;
 
 import static java.lang.System.nanoTime;
 
+// Update for logger, add a unique ID using date and time strings -> remove punctuation and turn into 1 int.
+
 public class Controller {
     private Sortable sorter;
     private final SorterView view;
@@ -43,17 +45,11 @@ public class Controller {
         sorter.sort(myArray);
         long stop = nanoTime();
         long timeTaken = stop - start;
-        // Have to print extra message for Binary Tree, this doesn't feel ideal
-        if (sorter instanceof BinaryTreeSorter) {
-            logger.error("Duplicates will be removed in a binary tree sort.");
-            System.out.println("----> Duplicates removed <----");
-        }
         view.displaySortedArray(myArray, timeTaken);
         String resultString = acceptableChoices.get(sortType) + ":Size(" + arrayLength + ")";
         results.put(resultString, timeTaken);
         logger.info((resultString + " -> " + timeTaken + " (ns)"));
         fileWriter.writeResultToFile(resultString, timeTaken);
-
         printResults();
     }
 

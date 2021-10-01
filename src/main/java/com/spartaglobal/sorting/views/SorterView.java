@@ -36,8 +36,8 @@ public class SorterView {
     public int getArrayLengthInput() {
         // This also is handled using a while loop instead of exceptions handling
         int choice = 0;
-        while (choice < 1 || choice > 100000) {
-            System.out.println("Please enter the desired length of array: ");
+        while (choice < 1 || choice > 10000) {
+            System.out.println("Please enter the desired length of array (1-10000): ");
             while (!scan.hasNextInt()) {
                 scan.nextLine();
                 System.out.println("Not a number, try again: ");

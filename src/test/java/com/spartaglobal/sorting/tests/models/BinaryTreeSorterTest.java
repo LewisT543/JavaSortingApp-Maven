@@ -14,7 +14,7 @@ public class BinaryTreeSorterTest {
     @Test
     public void createBinaryTreeSize5 () {
         int[] myNums = new int[] { 5, 4, 3, 2, 1};
-        String expectedOutput = "Node{k=5,l= Node{k=4,l= Node{k=3,l= Node{k=2,l= Node{k=1,l=null,r=null,i=4}," +
+        String expectedOutput = " Node{k=5,l= Node{k=4,l= Node{k=3,l= Node{k=2,l= Node{k=1,l=null,r=null,i=4}," +
                 "r=null,i=3},r=null,i=2},r=null,i=1},r=null,i=0}";
         BinaryTree bTree = new BinaryTree();
         bTree.put(myNums);
@@ -25,13 +25,24 @@ public class BinaryTreeSorterTest {
     @Test
     public void createBinaryTreeSize10 () {
         int[] myNums = new int[] { 5, 4, 3, 2, 1, 9, 12, 11, 25, 14 };
-        String expectedOutput = "Node{k=5,l= Node{k=4,l= Node{k=3,l= Node{k=2,l= Node{k=1,l=null,r=null,i=4}," +
+        String expectedOutput = " Node{k=5,l= Node{k=4,l= Node{k=3,l= Node{k=2,l= Node{k=1,l=null,r=null,i=4}," +
                 "r=null,i=3},r=null,i=2},r=null,i=1},r= Node{k=9,l=null,r= Node{k=12,l= Node{k=11,l=null," +
                 "r=null,i=7},r= Node{k=25,l= Node{k=14,l=null,r=null,i=9},r=null,i=8},i=6},i=5},i=0}";
         BinaryTree bTree = new BinaryTree();
         bTree.put(myNums);
         var root = bTree.getRoot();
         assertEquals(expectedOutput, root.toString());
+    }
+
+    @Test
+    public void givenArrayLen10_WithDupes_ReturnSortedLen20Array() {
+        int[] myArray = new int[] { 5, 4, 3, 2, 1, 9, 12, 11, 25, 14, 12, 54, 54, 12, 11, 16, 17, 20, 54, 20 };
+        int[] expectedArray = Arrays.copyOf(myArray, myArray.length);
+        Arrays.sort(expectedArray);
+        BinaryTreeSorter BinaryTreeSort = new BinaryTreeSorter();
+        BinaryTreeSort.sort(myArray);
+        assertEquals(20, myArray.length);
+        assertArrayEquals(expectedArray, myArray);
     }
 
     @Test
