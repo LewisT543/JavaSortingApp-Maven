@@ -47,5 +47,6 @@
 [ERROR] 2021-10-01 00:25:53,943 ResultsLogger.sortArray - Duplicates will be removed in a binary tree sort.
 [INFO] 2021-10-01 00:25:53,944 ResultsLogger.sortArray - BinaryTree:Size(5) -> 224200 (ns)
 [ERROR] 2021-10-01 00:29:29,107 ResultsLogger.sortArray - Duplicates will be removed in a binary tree sort.
-[INFO] 2021-10-01 00:29:29,154 ResultsLogger.sortArray - BinaryTree:Size(10) -> 23930800 (ns)[INFO] 2021-10-01 14:12:09,752 ResultsLogger.sortArray - BinaryTree:Size(5) -> 22674100 (ns)
+[INFO] 2021-10-01 00:29:29,154 ResultsLogger.sortArray - BinaryTree:Size(10) -> 23930800 (ns)
+[INFO] 2021-10-01 14:12:09,752 ResultsLogger.sortArray - BinaryTree:Size(5) -> 22674100 (ns)
 [INFO] 2021-10-01 14:31:40,612 ResultsLogger.sortArray - BinaryTree:Size(10000) -> 97585100 (ns)

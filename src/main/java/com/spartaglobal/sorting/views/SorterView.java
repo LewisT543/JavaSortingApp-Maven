@@ -25,7 +25,7 @@ public class SorterView {
 
     private String buildChoicesString(LinkedHashMap<String, String> acceptableChoices) {
         StringBuilder myString = new StringBuilder();
-        myString.append("Enter a choice of sorting algorithm:\s");
+        myString.append("Please select a sorting algorithm:\s");
         for (String choice : acceptableChoices.keySet()) {
             myString.append("\n -> ").append("'").append(choice).append("'").append(" for ")
                     .append(acceptableChoices.get(choice)).append("\s");
@@ -37,10 +37,10 @@ public class SorterView {
         // This also is handled using a while loop instead of exceptions handling
         int choice = 0;
         while (choice < 1 || choice > 10000) {
-            System.out.println("Please enter the desired length of array (1-10000): ");
+            System.out.println("Please enter the desired length of array to be sorted (1-10000): ");
             while (!scan.hasNextInt()) {
                 scan.nextLine();
-                System.out.println("Not a number, try again: ");
+                System.out.println("Not a number, please try again: ");
                 scan.nextLine();
             }
             choice = scan.nextInt();

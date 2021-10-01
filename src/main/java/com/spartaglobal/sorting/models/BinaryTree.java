@@ -34,22 +34,20 @@ public class BinaryTree {
             return index;
         }
 
-        private ArrayList<Integer> arrayList = null;
-        public int[] createIntArrayFromBST(BinaryTree bTree) {
-            if (arrayList == null) {
-                arrayList = new ArrayList<>();
-            }
-            inOrder(bTree.root);
-            return arrayList.stream().mapToInt(i->i).toArray();
+        public void setKey(Integer key) {
+            this.key = key;
         }
 
-        private void inOrder(Node node) {
-            if (node == null) {
-                return;
-            }
-            inOrder(node.left);
-            arrayList.add(node.key);
-            inOrder(node.right);
+        public void setLeft(Node left) {
+            this.left = left;
+        }
+
+        public void setRight(Node right) {
+            this.right = right;
+        }
+
+        public void setIndex(int index) {
+            this.index = index;
         }
 
         @Override
