@@ -44,7 +44,7 @@ public class Person implements Comparable<Person> {
     public String toString() {
         return "People{" +
                 "id=" + id +
-                ",name='" + name +
+                ",name=" + name +
                 ",height=" + height +
                 '}';
     }

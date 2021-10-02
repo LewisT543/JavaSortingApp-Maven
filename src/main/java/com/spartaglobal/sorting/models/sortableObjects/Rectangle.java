@@ -38,7 +38,11 @@ public class Rectangle implements Comparable<Rectangle>{
     @Override
     // This method allows us to pass this to a generic type sorter.
     public int compareTo(Rectangle o) {
-        return this.getArea() - o.getArea();
+        int difference = this.getArea() - o.getArea();
+        if (difference == 0) {
+            return this.getHeight() - o.getHeight();
+        }
+        return difference;
     }
 
     @Override

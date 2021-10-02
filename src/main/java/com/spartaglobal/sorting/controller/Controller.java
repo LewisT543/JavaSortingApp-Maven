@@ -52,20 +52,20 @@ public class Controller {
 //            case "p" -> myOtherArray = generator.generatePeopleArray(arrayLength);
 //        }
         
-        int[] myArray = generator.generateIntArray(arrayLength);
-        
-        // To fix this back to using myArray: Ctrl+R for find and replace   myOtherArray   with   myArray          
-        view.displayUnsortedArray(myArray); // <- This is broken because of generic typing.
-        long start = nanoTime();
-        sorter.sort(myArray);
-        long stop = nanoTime();
-        long timeTaken = stop - start;
-        view.displaySortedArray(myArray, timeTaken);
-        String resultString = SORT_CHOICES.get(sortType) + ":Size(" + arrayLength + ")";
-        results.put(resultString, timeTaken);
-        logger.info((resultString + " -> " + timeTaken + " (ns)"));
-        fileWriter.writeResultToFile(resultString, timeTaken);
-        printResults();
+//        int[] myArray = generator.generateIntArray(arrayLength);
+//
+//        // To fix this back to using myArray: Ctrl+R for find and replace   myOtherArray   with   myArray
+//        view.displayUnsortedArray(myArray); // <- This is broken because of generic typing.
+//        long start = nanoTime();
+//        sorter.sort(myArray);
+//        long stop = nanoTime();
+//        long timeTaken = stop - start;
+//        view.displaySortedArray(myArray, timeTaken);
+//        String resultString = SORT_CHOICES.get(sortType) + ":Size(" + arrayLength + ")";
+//        results.put(resultString, timeTaken);
+//        logger.info((resultString + " -> " + timeTaken + " (ns)"));
+//        fileWriter.writeResultToFile(resultString, timeTaken);
+//        printResults();
     }
 
     public void printResults() {

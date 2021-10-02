@@ -1,4 +1,4 @@
-package com.spartaglobal.sorting.models;
+package com.spartaglobal.sorting.models.generics;
 
 public class BubbleSorterGeneric implements SortableGenerics {
 
@@ -15,7 +15,7 @@ public class BubbleSorterGeneric implements SortableGenerics {
             for (int j = 0; j < n-i-1; j++)
                 // Check if arr[j] > arr[j+1], perform the swap using a temp variable
                 if (arr[j].compareTo(arr[j+1]) > 0) {
-                    E temp = arr[j];
+                    var temp = arr[j];
                     arr[j] = arr[j+1];
                     arr[j+1] = temp;
                 }

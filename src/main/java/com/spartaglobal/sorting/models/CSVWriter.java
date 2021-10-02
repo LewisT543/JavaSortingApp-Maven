@@ -17,7 +17,7 @@ public class CSVWriter {
         try {
             fw = new FileWriter("results.csv", true);
         } catch (IOException e) {
-            System.out.println("THIS IS MY FLAG.");
+            System.out.println("Results saving has gone wrong.");
             e.fillInStackTrace();
         }
         bw = new BufferedWriter(fw);

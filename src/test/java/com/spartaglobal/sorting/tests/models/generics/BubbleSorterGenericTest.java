@@ -1,6 +1,6 @@
-package com.spartaglobal.sorting.tests.models;
+package com.spartaglobal.sorting.tests.models.generics;
 
-import com.spartaglobal.sorting.models.BubbleSorterGeneric;
+import com.spartaglobal.sorting.models.generics.BubbleSorterGeneric;
 import com.spartaglobal.sorting.models.Generator;
 import com.spartaglobal.sorting.models.sortableObjects.Person;
 import com.spartaglobal.sorting.models.sortableObjects.Rectangle;
@@ -26,14 +26,11 @@ public class BubbleSorterGenericTest {
 
     @Test
     public void bubbleSortGenericsRandomGenLen20Rectangle() {
-        Rectangle[] rectArray = new Rectangle[20];
+        Generator gen = new Generator();
+        Rectangle[] rectArray = gen.generateRectArray(20);
         Rectangle[] rectArray2 = new Rectangle[20];
-        for (int i = 0; i < 20; i++) {
-            int num1 = (int)(Math.random() * 100);
-            int num2 = (int)(Math.random() * 100);
-            rectArray[i]  = new Rectangle(num1, num2);
-            rectArray2[i] = new Rectangle(num1, num2);
-        }
+        System.arraycopy(rectArray, 0, rectArray2, 0, rectArray.length);
+
         BubbleSorterGeneric bubSortGen = new BubbleSorterGeneric();
         bubSortGen.sort(rectArray);
         Arrays.sort(rectArray2);
@@ -44,14 +41,11 @@ public class BubbleSorterGenericTest {
 
     @Test
     public void bubbleSortGenericsRandomGenLen100Rectangle() {
-        Rectangle[] rectArray = new Rectangle[100];
+        Generator gen = new Generator();
+        Rectangle[] rectArray = gen.generateRectArray(100);
         Rectangle[] rectArray2 = new Rectangle[100];
-        for (int i = 0; i < 100; i++) {
-            int num1 = (int)(Math.random() * 100);
-            int num2 = (int)(Math.random() * 100);
-            rectArray[i]  = new Rectangle(num1, num2);
-            rectArray2[i] = new Rectangle(num1, num2);
-        }
+        System.arraycopy(rectArray, 0, rectArray2, 0, rectArray.length);
+
         BubbleSorterGeneric bubSortGen = new BubbleSorterGeneric();
         bubSortGen.sort(rectArray);
         Arrays.sort(rectArray2);
@@ -77,14 +71,9 @@ public class BubbleSorterGenericTest {
     @Test
     public void bubbleSortGenericsRandomGenLen20Person() {
         Generator gen = new Generator();
-        Person[] personArray = new Person[20];
+        Person[] personArray = gen.generatePeopleArray(20);
         Person[] personArray2 = new Person[20];
-        for (int i = 0; i < 20; i++) {
-            int num1 = (int)(Math.random() * 200);
-            String randomName = gen.generateRandomLengthRandomString();
-            personArray[i]  = new Person(i, randomName, num1);
-            personArray2[i] = new Person(i, randomName, num1);
-        }
+        System.arraycopy(personArray, 0, personArray2, 0, personArray.length);
         BubbleSorterGeneric bubSortGen = new BubbleSorterGeneric();
         bubSortGen.sort(personArray);
         Arrays.sort(personArray2);
@@ -96,14 +85,9 @@ public class BubbleSorterGenericTest {
     @Test
     public void bubbleSortGenericsRandomGenLen100Person() {
         Generator gen = new Generator();
-        Person[] personArray = new Person[100];
+        Person[] personArray = gen.generatePeopleArray(100);
         Person[] personArray2 = new Person[100];
-        for (int i = 0; i < 100; i++) {
-            int num1 = (int)(Math.random() * 200);
-            String randomName = gen.generateRandomLengthRandomString();
-            personArray[i]  = new Person(i, randomName, num1);
-            personArray2[i] = new Person(i, randomName, num1);
-        }
+        System.arraycopy(personArray, 0, personArray2, 0, personArray.length);
         BubbleSorterGeneric bubSortGen = new BubbleSorterGeneric();
         bubSortGen.sort(personArray);
         Arrays.sort(personArray2);

@@ -1,8 +1,5 @@
 package com.spartaglobal.sorting.models;
 
-// THERES A FIX FOR DUPES!
-// Instead of doing if (node < left) (node > right) DO (node < left) (node => right)
-
 public class BinaryTreeSorter implements Sortable {
     @Override
     public void sort(int[] array) {
@@ -23,5 +20,4 @@ public class BinaryTreeSorter implements Sortable {
             array[i] = newArray[i];
         }
     }
-
 }
