@@ -1,9 +1,9 @@
 package com.spartaglobal.sorting;
 
-import com.spartaglobal.sorting.models.CSVWriter;
+import com.spartaglobal.sorting.models.utils.CSVWriter;
 import com.spartaglobal.sorting.views.SorterView;
 import com.spartaglobal.sorting.controller.Controller;
-import com.spartaglobal.sorting.models.Generator;
+import com.spartaglobal.sorting.models.utils.Generator;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 

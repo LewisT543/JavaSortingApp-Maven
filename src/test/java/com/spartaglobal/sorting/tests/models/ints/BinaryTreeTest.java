@@ -1,6 +1,6 @@
-package com.spartaglobal.sorting.tests.models;
+package com.spartaglobal.sorting.tests.models.ints;
 
-import com.spartaglobal.sorting.models.BinaryTree;
+import com.spartaglobal.sorting.models.ints.BinaryTree;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;

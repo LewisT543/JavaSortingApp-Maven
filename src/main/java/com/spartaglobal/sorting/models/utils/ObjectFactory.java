@@ -1,4 +1,7 @@
-package com.spartaglobal.sorting.models;
+package com.spartaglobal.sorting.models.utils;
+
+import com.spartaglobal.sorting.models.ints.Sortable;
+import com.spartaglobal.sorting.models.ints.*;
 
 public class ObjectFactory {
     public static Sortable createSortObject(String choice) {

@@ -1,12 +1,13 @@
 package com.spartaglobal.sorting.controller;
 
-import com.spartaglobal.sorting.models.*;
+import com.spartaglobal.sorting.models.ints.Sortable;
+import com.spartaglobal.sorting.models.utils.CSVWriter;
+import com.spartaglobal.sorting.models.utils.Generator;
+import com.spartaglobal.sorting.models.utils.ObjectFactory;
 import com.spartaglobal.sorting.views.SorterView;
 import org.apache.log4j.Logger;
 
 import java.util.LinkedHashMap;
-
-import static java.lang.System.nanoTime;
 
 // Update for logger, add a unique ID using date and time strings -> remove punctuation and turn into 1 int.
 

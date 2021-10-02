@@ -1,6 +1,6 @@
-package com.spartaglobal.sorting.tests.models;
+package com.spartaglobal.sorting.tests.models.utils;
 
-import com.spartaglobal.sorting.models.Generator;
+import com.spartaglobal.sorting.models.utils.Generator;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;

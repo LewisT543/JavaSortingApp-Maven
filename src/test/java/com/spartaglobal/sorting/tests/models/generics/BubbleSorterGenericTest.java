@@ -1,7 +1,7 @@
 package com.spartaglobal.sorting.tests.models.generics;
 
 import com.spartaglobal.sorting.models.generics.BubbleSorterGeneric;
-import com.spartaglobal.sorting.models.Generator;
+import com.spartaglobal.sorting.models.utils.Generator;
 import com.spartaglobal.sorting.models.sortableObjects.Person;
 import com.spartaglobal.sorting.models.sortableObjects.Rectangle;
 import org.junit.jupiter.api.Assertions;

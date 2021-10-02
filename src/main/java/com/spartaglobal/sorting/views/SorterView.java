@@ -1,7 +1,5 @@
 package com.spartaglobal.sorting.views;
 
-import com.spartaglobal.sorting.models.CSVWriter;
-
 import java.util.*;
 
 public class SorterView {

@@ -1,8 +1,8 @@
-package com.spartaglobal.sorting.tests.models;
+package com.spartaglobal.sorting.tests.models.ints;
 
-import com.spartaglobal.sorting.models.Generator;
-import com.spartaglobal.sorting.models.BinaryTree;
-import com.spartaglobal.sorting.models.BinaryTreeSorter;
+import com.spartaglobal.sorting.models.utils.Generator;
+import com.spartaglobal.sorting.models.ints.BinaryTree;
+import com.spartaglobal.sorting.models.ints.BinaryTreeSorter;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;

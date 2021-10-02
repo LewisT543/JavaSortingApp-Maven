@@ -1,4 +1,4 @@
-package com.spartaglobal.sorting.models;
+package com.spartaglobal.sorting.models.utils;
 
 import org.apache.log4j.Logger;
 

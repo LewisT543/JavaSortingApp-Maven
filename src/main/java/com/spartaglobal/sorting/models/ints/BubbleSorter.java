@@ -1,4 +1,4 @@
-package com.spartaglobal.sorting.models;
+package com.spartaglobal.sorting.models.ints;
 
 public class BubbleSorter implements Sortable {
     // Bubble sort Int Array

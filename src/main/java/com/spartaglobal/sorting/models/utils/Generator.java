@@ -1,4 +1,4 @@
-package com.spartaglobal.sorting.models;
+package com.spartaglobal.sorting.models.utils;
 
 import com.spartaglobal.sorting.models.sortableObjects.Person;
 import com.spartaglobal.sorting.models.sortableObjects.Rectangle;

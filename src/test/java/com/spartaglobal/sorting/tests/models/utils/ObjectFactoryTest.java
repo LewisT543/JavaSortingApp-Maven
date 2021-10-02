@@ -1,9 +1,9 @@
-package com.spartaglobal.sorting.tests.models;
+package com.spartaglobal.sorting.tests.models.utils;
 
-import com.spartaglobal.sorting.models.Sortable;
+import com.spartaglobal.sorting.models.ints.Sortable;
 import org.junit.jupiter.api.Test;
 
-import static com.spartaglobal.sorting.models.ObjectFactory.createSortObject;
+import static com.spartaglobal.sorting.models.utils.ObjectFactory.createSortObject;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 public class ObjectFactoryTest {
