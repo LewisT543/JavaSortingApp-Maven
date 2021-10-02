@@ -1,5 +1,6 @@
 package com.spartaglobal.sorting.controller;
 
+import com.spartaglobal.sorting.models.generics.SortableGenerics;
 import com.spartaglobal.sorting.models.ints.Sortable;
 import com.spartaglobal.sorting.models.utils.CSVWriter;
 import com.spartaglobal.sorting.models.utils.Generator;
@@ -13,11 +14,12 @@ import java.util.LinkedHashMap;
 
 public class Controller {
     private Sortable sorter;
+    private SortableGenerics genericSorter;
     private final SorterView view;
     private final Generator generator;
     private final Logger logger;
     private final CSVWriter fileWriter;
-    private final LinkedHashMap<String, String> SORT_CHOICES = new LinkedHashMap<>() {{
+    private final LinkedHashMap<String, String> INT_SORT_CHOICES = new LinkedHashMap<>() {{
         put("b", "BubbleSort");
         put("m", "MergeSort");
         put("q", "QuickSort");
@@ -25,10 +27,24 @@ public class Controller {
         put("bt", "BinaryTree");
         put("x", "Exit Program");
     }};
+    // This is not ideal, but I couldn't think of a clever way to exclude BinaryTree as an option.
+    private final LinkedHashMap<String, String> OBJ_SORT_CHOICES = new LinkedHashMap<>() {{
+        put("b", "BubbleSort");
+        put("m", "MergeSort");
+        put("q", "QuickSort");
+        put("i", "InsertionSorter");
+        put("x", "Exit Program");
+    }};
     private final LinkedHashMap<String, String> OBJECT_CHOICES = new LinkedHashMap<>() {{
         put("i", "Integers");
         put("r", "Rectangles");
         put("p", "People");
+        put("x", "Exit Program");
+    }};
+    private final LinkedHashMap<String, String> ARRAY_TYPES = new LinkedHashMap<>() {{
+        put("i", "int[]");
+        put("o", "object[]");
+        put("x", "Exit Program");
     }};
     private final LinkedHashMap<String, Long> results = new LinkedHashMap<>();
 
@@ -39,34 +55,61 @@ public class Controller {
         this.logger = logger;
         this.fileWriter = fileWriter;
     }
+    // Add a method to determine int[] or object[], which calls the appropriate method.
+    public void whichSort() {
+        String sortChoice = view.getInput(ARRAY_TYPES,"int[]'s or object[]'s to sort");
+        switch (sortChoice) {
+            case "i" -> sortIntArray();
+            case "o" -> sortObjArray();
+            default -> sortObjArray();
+        };
+    }
 
-    public void sortArray() {
-        String sortType = view.getSortTypeInput(SORT_CHOICES);
+    public void sortIntArray() {
+        // Get and set sort type
+        String sortType = view.getInput(INT_SORT_CHOICES, "a sorting algorithm");
         sorter = ObjectFactory.createSortObject(sortType);
-        // String objectType = view.getObjectTypeInput(OBJECT_CHOICES);
+        // Get array length and generate int[] array
         int arrayLength = view.getArrayLengthInput();
-        
-//        Object[] myOtherArray;
-//        switch (objectType) {
-//            case "i" -> myOtherArray = generator.generateIntegerArray(arrayLength);
-//            case "r" -> myOtherArray = generator.generateRectArray(arrayLength);
-//            case "p" -> myOtherArray = generator.generatePeopleArray(arrayLength);
-//        }
-        
-//        int[] myArray = generator.generateIntArray(arrayLength);
-//
-//        // To fix this back to using myArray: Ctrl+R for find and replace   myOtherArray   with   myArray
-//        view.displayUnsortedArray(myArray); // <- This is broken because of generic typing.
-//        long start = nanoTime();
-//        sorter.sort(myArray);
-//        long stop = nanoTime();
-//        long timeTaken = stop - start;
-//        view.displaySortedArray(myArray, timeTaken);
-//        String resultString = SORT_CHOICES.get(sortType) + ":Size(" + arrayLength + ")";
-//        results.put(resultString, timeTaken);
-//        logger.info((resultString + " -> " + timeTaken + " (ns)"));
-//        fileWriter.writeResultToFile(resultString, timeTaken);
-//        printResults();
+        int[] myArray = generator.generateIntArray(arrayLength);
+
+        view.displayUnsortedArray(myArray);
+        long start = System.nanoTime();
+        sorter.sort(myArray);
+        long stop = System.nanoTime();
+        long timeTaken = stop - start;
+        view.displaySortedArray(myArray, timeTaken);
+        String resultString = INT_SORT_CHOICES.get(sortType) + ":Size(" + arrayLength + ")";
+        results.put(resultString, timeTaken);
+        logger.info((resultString + " -> " + timeTaken + " (ns)"));
+        fileWriter.writeResultToFile(resultString, timeTaken);
+        printResults();
+    }
+
+    // Why comparable? <E> on its own should work?
+    public <E extends Comparable <E>> void sortObjArray() {
+        String sortType = view.getInput(OBJ_SORT_CHOICES, "a sorting algorithm");
+        genericSorter = ObjectFactory.createGenericSortObject(sortType);
+        int arrayLength = view.getArrayLengthInput();
+        String objectType = view.getInput(OBJECT_CHOICES, "an object type");
+        Object[] myArray = null;
+        switch (objectType) {
+            case "r" -> myArray = generator.generateRectArray(arrayLength);
+            case "p" -> myArray = generator.generatePeopleArray(arrayLength);
+            default -> myArray = generator.generateIntegerArray(arrayLength);
+        }
+        view.displayUnsortedObjArray(myArray);
+        long start = System.nanoTime();
+        genericSorter.sort((E[]) myArray); // Object[] -> E[] casting. No idea what could go wrong here.
+        long stop = System.nanoTime();
+        long timeTaken = stop - start;
+        view.displaySortedObjArray(myArray, timeTaken);
+        String resultString = INT_SORT_CHOICES.get(sortType) + "||" + OBJECT_CHOICES.get(objectType) +
+                ":Size(" + arrayLength + ")";
+        results.put(resultString, timeTaken);
+        logger.info((resultString + " -> " + timeTaken + " (ns)"));
+        fileWriter.writeResultToFile(resultString, timeTaken);
+        printResults();
     }
 
     public void printResults() {
@@ -76,5 +119,9 @@ public class Controller {
             i ++;
         }
         System.out.println("");
+    }
+
+    public void printWelcomeBanner() {
+        view.printWelcomeBanner();
     }
 }

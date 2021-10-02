@@ -18,3 +18,14 @@ BinaryTree,5,224200
 BinaryTree,10,23930800
 BinaryTree,5,22674100
 BinaryTree,10000,97585100
+BubbleSort,10,7800
+MergeSort,10,37400
+QuickSort,10,41000
+InsertionSorter,10,9400
+BinaryTree,10,15628700
+BubbleSort||Integers,10,87500
+MergeSort||Rectangles,10,43600
+QuickSort||People,10,58600
+InsertionSorter||Integers,10,27900
+BinaryTree||Rectangles,10,25400
+BubbleSort||Rectangles,100,1876900

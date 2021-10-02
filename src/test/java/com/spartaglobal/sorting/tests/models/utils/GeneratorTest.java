@@ -45,8 +45,8 @@ public class GeneratorTest {
         System.out.println(randString);
         assertAll(
                 () -> assertNotNull(randString),
-                () -> assertTrue(randString.length() > 0),
-                () -> assertTrue(randString.length() < 11),
+                () -> assertTrue(randString.length() > 4),
+                () -> assertTrue(randString.length() < 16),
                 () -> assertTrue(randString.matches("[a-zA-Z]+"))
         );
     }

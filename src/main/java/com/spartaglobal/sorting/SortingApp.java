@@ -12,17 +12,19 @@ public class SortingApp {
     public static void main(String[] args) {
         Controller controller = new Controller(new SorterView(), new Generator(), resultsLogger, new CSVWriter());
         PropertyConfigurator.configure("log4j.properties");
-        while (true) { controller.sortArray(); }
+        controller.printWelcomeBanner();
+        while (true) { controller.whichSort(); }
     }
 }
 /* GUI
 I honestly don't think I want to do a GUI, but I could make the CLI look a bit nicer.
 */
 /* On generic method migration
-Almost implemented - add in functionality or at least conversion methods for Integer[] typing instead of int[].
-Finished wo Tests  - some generators need testing more rigorously
-Still to do        - BTS, Insertion, Merge, Quick
-                   - ReadMe...
-Done               - BubbleSortGeneric + tests
-                   - controller and views methods updated for Object[] typing
+
+Finished wo Tests  - Some new controller stuff, not sure if I even need to test at all
+                   - ObjectFactory needs tests written for createGenericSortObject()
+Still to do        - Readme.
+                   - Manually test this thing (mostly user input) and make sure nothing is breaking
+Done               - ...Everything
+                   - I don't know how, but I've got full generics support implemented
 */
