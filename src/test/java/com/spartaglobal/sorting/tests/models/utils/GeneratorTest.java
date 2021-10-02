@@ -14,7 +14,7 @@ public class GeneratorTest {
             assertTrue(number > 0);
             assertTrue(number < 100);
         }
-        assertEquals(array.length, 10);
+        assertEquals(10, array.length);
     }
     @Test
     public void givenLength20_ReturnArrayLen20() {
@@ -24,7 +24,7 @@ public class GeneratorTest {
             assertTrue(number > 0);
             assertTrue(number < 100);
         }
-        assertEquals(array.length, 20);
+        assertEquals(20, array.length);
     }
 
     @Test

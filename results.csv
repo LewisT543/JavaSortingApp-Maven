@@ -29,3 +29,7 @@ QuickSort||People,10,58600
 InsertionSorter||Integers,10,27900
 BinaryTree||Rectangles,10,25400
 BubbleSort||Rectangles,100,1876900
+BubbleSort,100,821800
+BinaryTree,100,16912000
+InsertionSorter,100,130500
+BubbleSort||Rectangles,100,1011500

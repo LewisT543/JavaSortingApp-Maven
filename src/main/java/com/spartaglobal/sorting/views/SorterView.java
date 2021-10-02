@@ -12,7 +12,7 @@ public class SorterView {
         System.out.println("|    -> Rectangles are sorted   |");
         System.out.println("|       by AREA.                |");
         System.out.println("|    -> People are sorted by    |");
-        System.out.println("|       name, alphabetically    |");
+        System.out.println("|       NAME, alphabetically    |");
         System.out.println("+-------------------------------+");
     }
 

@@ -10,8 +10,6 @@ import org.apache.log4j.Logger;
 
 import java.util.LinkedHashMap;
 
-// Update for logger, add a unique ID using date and time strings -> remove punctuation and turn into 1 int.
-
 public class Controller {
     private Sortable sorter;
     private SortableGenerics genericSorter;

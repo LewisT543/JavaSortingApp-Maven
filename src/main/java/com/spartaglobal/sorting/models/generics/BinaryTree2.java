@@ -81,7 +81,7 @@
 //        // key for Person -> key.getName()
 //        // int cmp = key.something.compareTo(node.keyObject.something); // A fix using a universal variable for all
 //                                                                        // comparable classes
-//        int cmp = Integer.valueOf(key).compareTo(node.keyObject); // <-- how am I inserting the values??
+//        int cmp = Integer.valueOf(key).compareTo(node.key); // <-- how am I inserting the values??
 //
 //        if (cmp < 0)
 //            node.left = put(node.left, key, index);

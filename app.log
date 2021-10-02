@@ -61,3 +61,7 @@
 [INFO] 2021-10-02 17:19:23,712 ResultsLogger.sortObjArray - InsertionSorter||Integers:Size(10) -> 27900 (ns)
 [INFO] 2021-10-02 17:19:33,157 ResultsLogger.sortObjArray - BinaryTree||Rectangles:Size(10) -> 25400 (ns)
 [INFO] 2021-10-02 17:29:07,058 ResultsLogger.sortObjArray - BubbleSort||Rectangles:Size(100) -> 1876900 (ns)
+[INFO] 2021-10-02 17:47:45,765 ResultsLogger.sortIntArray - BubbleSort:Size(100) -> 821800 (ns)
+[INFO] 2021-10-02 17:48:07,161 ResultsLogger.sortIntArray - BinaryTree:Size(100) -> 16912000 (ns)
+[INFO] 2021-10-02 17:49:15,328 ResultsLogger.sortIntArray - InsertionSorter:Size(100) -> 130500 (ns)
+[INFO] 2021-10-02 17:49:36,988 ResultsLogger.sortObjArray - BubbleSort||Rectangles:Size(100) -> 1011500 (ns)
