@@ -21,7 +21,7 @@ public class GeneratorTest {
         Generator gen = new Generator();
         int[] array = gen.generateIntArray(20);
         for (int number : array) {
-            assertTrue(number > 0);
+            assertTrue(number >= 0);
             assertTrue(number < 100);
         }
         assertEquals(20, array.length);

@@ -46,6 +46,11 @@ public class Rectangle implements Comparable<Rectangle>{
     }
 
     @Override
+    public int hashCode() {
+        return this.getArea();
+    }
+
+    @Override
     public String toString() {
         return "Rect{" +
                 "w=" + width +
