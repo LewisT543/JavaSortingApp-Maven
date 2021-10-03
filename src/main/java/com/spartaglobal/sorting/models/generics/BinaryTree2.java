@@ -1,6 +1,13 @@
 //package com.spartaglobal.sorting.models.generics;
 //
 //import java.util.ArrayList;
+
+// // NEW IDEA: keep key as an int, which is derived from a given object property?
+// // Better yet, use getHashCode() to allocate a value to the key. This allows me to independently allocate a method
+// // of producing the correct size hashcode based on the sort criteria.
+// // e.g. if p1 has a name "ABCCD" + P2.name = "ZGHYF". person1.getHashCode() -> 001432, p2.getHashCode() -> 602365.
+// // This is going to require a custom algorithm for each type of object I want compatible with a BinarySearchTree.
+
 //
 //public class BinaryTree2 <T extends Comparable<T>> implements SortableGenerics {
 //    @Override
