@@ -115,6 +115,10 @@ __Binary Search Tree Insertion Algorithm__
 
 ![A picture](ReadmeExtras/bst-insert.png)
 
+__inOrder traversal Algorithm__
+
+![A picture](ReadmeExtras/inOrderTraverse.png)
+
 __Demonstration__
 
 ![A picture](ReadmeExtras/bst-animation.gif)
