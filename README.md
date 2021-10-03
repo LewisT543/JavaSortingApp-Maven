@@ -7,6 +7,8 @@ This is an example of a simple sorting app. The program provides the user with t
 - ######  BubbleSort
 - ######  MergeSort
 - ######  QuickSort
+- ######  InsertionSort
+- ######  BinarySortTree and inOrder traversal
 
 ## BubbleSort
 BubbleSort will sort an array by 'floating' higher values towards the end of the array, allowing lower values to 'sink' to the start.
@@ -104,7 +106,7 @@ https://en.wikipedia.org/wiki/Insertion_sort
 
 
 ## BinarySearchTree and inOrder traversal
-A binary search tree is a data structure comprising of nodes. Each node has a left and right node. The general rules for a binary search tree can be found below.
+A binary search tree is a data structure consisting of nodes. Each node has a left and right node. The general rules for a binary search tree can be found below.
 Once the binary search tree is constructed, we can perform an inOrder traversal to build a sorted array from the search tree.
 
 __Binary Search Tree Properties__
@@ -113,7 +115,7 @@ __Binary Search Tree Properties__
 
 __Binary Search Tree Insertion Algorithm__
 
-![A picture](ReadmeExtras/bst-insert.png)
+![A picture](ReadmeExtras/BST-insert.png)
 
 __inOrder traversal Algorithm__
 
