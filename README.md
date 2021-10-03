@@ -77,3 +77,50 @@ __Space and Time Complexity__
 
 ###### Wikipedia Link - more info
 https://en.wikipedia.org/wiki/Quick_sort
+
+
+## InsertionSort
+Insertion sort works by inserting each element one at a time. It will iterate through the array, selecting elements. Each element will then be compared to the rest of the array and placed in its lowest index valid position. 
+
+__Algorithm__
+
+![A picture](ReadmeExtras/InsertionSortAlgorithm.png)
+
+__PseaudoCode__
+
+![A picture](ReadmeExtras/InsertionSortPseudo.png)
+
+__Demonstration__
+
+![A picture](ReadmeExtras/insertion-sort-animation.gif)
+
+__Space and Time Complexity__
+
+![A picture](ReadmeExtras/InsertionSortStats.png)
+
+###### Wikipedia Link - more info
+https://en.wikipedia.org/wiki/Insertion_sort
+
+
+
+## BinarySearchTree and inOrder traversal
+A binary search tree is a data structure comprising of nodes. Each node has a left and right node 
+
+__Algorithm__
+
+![A picture](ReadmeExtras/InsertionSortAlgorithm.png)
+
+__PseaudoCode__
+
+![A picture](ReadmeExtras/InsertionSortPseudo.png)
+
+__Demonstration__
+
+![A picture](ReadmeExtras/insertion-sort-animation.gif)
+
+__Space and Time Complexity__
+
+![A picture](ReadmeExtras/InsertionSortStats.png)
+
+###### Wikipedia Link - more info
+https://en.wikipedia.org/wiki/Insertion_sort
