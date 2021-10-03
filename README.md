@@ -1,7 +1,8 @@
 # Java Sorting App
 
 
-This is an example of a simple sorting app. The program provides the user with the ability to generate an array of a given length, then choose the method in which it should be sorted. Now with generic typing support. Arrays of any Object with a compareTo() method can be sorted using all algortihms (except BinarySearchTree, that is currently a work in progress).
+This is an example of a simple sorting app. The program provides the user with the ability to generate an array of a given length, then choose the method in which it should be sorted. 
+Now with generic typing support. Arrays of any Object with a compareTo() method can be sorted using all algortihms (except BinarySearchTree, that is currently a work in progress).
 
 ### Table of Contents
 - ######  BubbleSort
