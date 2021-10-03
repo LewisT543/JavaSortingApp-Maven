@@ -104,23 +104,24 @@ https://en.wikipedia.org/wiki/Insertion_sort
 
 
 ## BinarySearchTree and inOrder traversal
-A binary search tree is a data structure comprising of nodes. Each node has a left and right node 
+A binary search tree is a data structure comprising of nodes. Each node has a left and right node. The general rules for a binary search tree can be found below.
+Once the binary search tree is constructed, we can perform an inOrder traversal to build a sorted array from the search tree.
 
-__Algorithm__
+__Binary Search Tree Properties__
 
-![A picture](ReadmeExtras/InsertionSortAlgorithm.png)
+![A picture](ReadmeExtras/bst-properties.png)
 
-__PseaudoCode__
+__Binary Search Tree Insertion Algorithm__
 
-![A picture](ReadmeExtras/InsertionSortPseudo.png)
+![A picture](ReadmeExtras/bst-insert.png)
 
 __Demonstration__
 
-![A picture](ReadmeExtras/insertion-sort-animation.gif)
+![A picture](ReadmeExtras/bst-animation.gif)
 
 __Space and Time Complexity__
 
-![A picture](ReadmeExtras/InsertionSortStats.png)
+![A picture](ReadmeExtras/bst-stats.png)
 
-###### Wikipedia Link - more info
-https://en.wikipedia.org/wiki/Insertion_sort
+###### Wikipedia Links - more info
+https://en.wikipedia.org/wiki/B-tree
