@@ -94,7 +94,7 @@ __PseaudoCode__
 
 __Demonstration__
 
-![A picture](ReadmeExtras/insertion-sort-animation.gif)
+![A picture](ReadmeExtras/Insertion-sort-animation.gif)
 
 __Space and Time Complexity__
 
