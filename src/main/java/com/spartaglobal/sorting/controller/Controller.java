@@ -1,6 +1,6 @@
 package com.spartaglobal.sorting.controller;
 
-import com.spartaglobal.sorting.models.generics.SortableGenerics;
+import com.spartaglobal.sorting.models.generics.GenericSortable;
 import com.spartaglobal.sorting.models.ints.Sortable;
 import com.spartaglobal.sorting.models.utils.CSVWriter;
 import com.spartaglobal.sorting.models.utils.Generator;
@@ -12,7 +12,7 @@ import java.util.LinkedHashMap;
 
 public class Controller {
     private Sortable sorter;
-    private SortableGenerics genericSorter;
+    private GenericSortable genericSorter;
     private final SorterView view;
     private final Generator generator;
     private final Logger logger;
@@ -53,7 +53,7 @@ public class Controller {
         this.logger = logger;
         this.fileWriter = fileWriter;
     }
-    // Add a method to determine int[] or object[], which calls the appropriate method.
+
     public void whichSort() {
         String sortChoice = view.getInput(ARRAY_TYPES,"int[]'s or object[]'s to sort");
         switch (sortChoice) {
@@ -84,7 +84,6 @@ public class Controller {
         printResults();
     }
 
-    // Why comparable? <E> on its own should work?
     public <E extends Comparable <E>> void sortObjArray() {
         String sortType = view.getInput(OBJ_SORT_CHOICES, "a sorting algorithm");
         genericSorter = ObjectFactory.createGenericSortObject(sortType);
@@ -98,8 +97,8 @@ public class Controller {
         }
         view.displayUnsortedObjArray(myArray);
         long start = System.nanoTime();
-        genericSorter.sort((E[]) myArray); // Object[] -> E[] casting. No idea what could go wrong here.
-        long stop = System.nanoTime();
+        genericSorter.sort((E[]) myArray); // Object[] -> E[] casting. Not entirely sure what to do about this.
+        long stop = System.nanoTime();     // Possibly a try-catch, but it still breaks the app anyway.
         long timeTaken = stop - start;
         view.displaySortedObjArray(myArray, timeTaken);
         String resultString = INT_SORT_CHOICES.get(sortType) + "||" + OBJECT_CHOICES.get(objectType) +

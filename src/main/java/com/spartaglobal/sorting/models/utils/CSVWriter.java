@@ -8,7 +8,6 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 public class CSVWriter {
-    // Something smells funky about needing all 3 of these as private variables, should only need pw?
     private static FileWriter fw;
     private static BufferedWriter bw;
     private static PrintWriter pw;

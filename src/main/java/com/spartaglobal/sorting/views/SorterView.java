@@ -74,7 +74,7 @@ public class SorterView {
         }
         System.out.print("\n");
     }
-
+    // These could replace the above functions using Integer type conversions.
     public <E> void displayUnsortedObjArray(E[] arr) {
         System.out.println("----Unsorted Object[] array----");
         printObjArray(arr);

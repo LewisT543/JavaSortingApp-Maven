@@ -1,6 +1,7 @@
 package com.spartaglobal.sorting.models.ints;
 
 public class BinaryTreeSorter implements Sortable {
+    // Driver class for BinaryTree
     @Override
     public void sort(int[] array) {
         BinaryTree bTree = createBinaryTree(array);

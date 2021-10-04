@@ -16,15 +16,4 @@ public class SortingApp {
         while (true) { controller.whichSort(); }
     }
 }
-/* GUI
-I honestly don't think I want to do a GUI, but I could make the CLI look a bit nicer.
-*/
-/* On generic method migration
 
-Finished wo Tests  - Some new controller stuff, not sure if I even need to test at all
-                   - ObjectFactory needs tests written for createGenericSortObject()
-Still to do        - Readme.
-                   - Manually test this thing (mostly user input) and make sure nothing is breaking
-Done               - ...Everything
-                   - I don't know how, but I've got full generics support implemented
-*/

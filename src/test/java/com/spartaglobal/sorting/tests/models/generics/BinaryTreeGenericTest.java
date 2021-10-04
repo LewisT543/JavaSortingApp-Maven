@@ -9,6 +9,8 @@
 //import static org.junit.jupiter.api.Assertions.assertAll;
 //import static org.junit.jupiter.api.Assertions.assertEquals;
 //
+// // NOT CURRENTLY IN USE
+//
 //public class BinaryTreeGenericTest {
 //    @Test
 //    public void randomBash () {

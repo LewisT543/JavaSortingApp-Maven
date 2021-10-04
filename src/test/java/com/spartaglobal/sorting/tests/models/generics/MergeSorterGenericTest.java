@@ -97,7 +97,7 @@ public class MergeSorterGenericTest {
     }
 
     @Test
-    public void theGenericSortWithIntProblem () {
+    public void mergeSorterGenericsLen5VariedTypes() {
         Generator gen = new Generator();
         Person[] personsArray = new Person[] {
                 new Person(1, "Jeff", 175),

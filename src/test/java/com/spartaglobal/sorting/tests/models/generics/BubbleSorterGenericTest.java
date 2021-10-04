@@ -97,7 +97,7 @@ public class BubbleSorterGenericTest {
     }
 
     @Test
-    public void theGenericSortWithIntProblem () {
+    public void bubbleSortGenericsLen5VariedTypes() {
         Generator gen = new Generator();
         Person[] personsArray = new Person[] {
                 new Person(1, "Jeff", 175),
@@ -119,9 +119,8 @@ public class BubbleSorterGenericTest {
 
         sorter.sort(personsArray);
         sorter.sort(rectangleArray);
-        // Not quite sure how this works, but it does exactly what I want it to.
-
         Integer[] integerArray = Arrays.stream( intArray ).boxed().toArray( Integer[]::new );
+        // Not exactly sure how this works, but it turns an int array into an Integer array.
         sorter.sort(integerArray);
 
         System.out.println(Arrays.toString(personsArray));

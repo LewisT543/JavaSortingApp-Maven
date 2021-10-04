@@ -1,5 +1,5 @@
 package com.spartaglobal.sorting.models.generics;
 
-public interface SortableGenerics {
+public interface GenericSortable {
     <E extends Comparable<E>> void sort(E[] arr);
 }

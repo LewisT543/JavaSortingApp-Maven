@@ -97,7 +97,7 @@ public class InsertionSorterGenericTest {
     }
 
     @Test
-    public void theGenericSortWithIntProblem () {
+    public void insertionSortGenericsLen5VariedTypes() {
         Generator gen = new Generator();
         Person[] personsArray = new Person[] {
                 new Person(1, "Jeff", 175),

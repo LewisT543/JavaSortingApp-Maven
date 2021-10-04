@@ -6,9 +6,8 @@ import com.spartaglobal.sorting.models.sortableObjects.Rectangle;
 import java.util.Random;
 
 public class Generator {
-    // Not currently used but might be at some point
-    private int[] mostRecentUnsortedIntArray;
-    private Object[] mostRecentUnsortedObjectArray;
+    private int[] mostRecentUnsortedIntArray; // This variable is currently unused
+    private Object[] mostRecentUnsortedObjectArray; // As is this variable - but it could be useful in the future.
     private final char[] charChoices = new char[] {
             'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M',
             'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'
@@ -23,7 +22,7 @@ public class Generator {
         mostRecentUnsortedIntArray = myArr;
         return myArr;
     }
-// -----------------------------------------------------------//
+
     public Integer[] generateIntegerArray(int arrayLength) {
         Integer[] myArr = new Integer[arrayLength];
         Random r = new Random();
@@ -33,7 +32,7 @@ public class Generator {
         mostRecentUnsortedObjectArray = myArr;
         return myArr;
     }
-//
+
     public Rectangle[] generateRectArray(int arrayLength) {
         Rectangle[] myArr = new Rectangle[arrayLength];
         for (int i = 0; i < arrayLength; i++) {
@@ -42,7 +41,7 @@ public class Generator {
         mostRecentUnsortedObjectArray = myArr;
         return myArr;
     }
-//
+
     public Person[] generatePeopleArray(int arrayLength) {
         Person[] myArr = new Person[arrayLength];
         for (int i = 0; i < arrayLength; i++) {
@@ -51,7 +50,7 @@ public class Generator {
         mostRecentUnsortedObjectArray = myArr;
         return myArr;
     }
-// --------------------------------------------------------- //
+
     public String generateRandomLengthRandomString() {
         int length = (int)(Math.random() * 10) + 5;
         StringBuilder str = new StringBuilder();

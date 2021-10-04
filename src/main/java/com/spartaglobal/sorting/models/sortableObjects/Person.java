@@ -1,7 +1,5 @@
 package com.spartaglobal.sorting.models.sortableObjects;
 
-import java.nio.charset.StandardCharsets;
-
 public class Person implements Comparable<Person> {
     private int id;
     private String name;
@@ -38,22 +36,11 @@ public class Person implements Comparable<Person> {
     }
 
     @Override
+    // Allows for comparisons using generic sorting algorithms.
     public int compareTo(Person o) {
         return this.getName().compareTo(o.getName());
     }
 // UPDATE: I need a... Minimum Perfect Hash function with Order preserving... I don't know how to write this.
-//    @Override
-//    public int hashCode() {
-//        // This could be more robust - may go a bit wrong when we deal with 3 character ascii values (lower case).
-//        // Must return an int so we have a new problem
-//        StringBuilder myBuilder = new StringBuilder();
-//        byte[] bytes = this.name.getBytes(StandardCharsets.US_ASCII);
-//        for (byte charValue : bytes) {
-//            myBuilder.append(charValue);
-//        }
-//        return Integer.MAX_VALUE - Integer.parseInt(myBuilder.toString());
-//    }
-//
 //    @Override
 //    public int hashCode() {
 //        // This could be more robust - may go a bit wrong when we deal with 3 character ascii values (lower case).

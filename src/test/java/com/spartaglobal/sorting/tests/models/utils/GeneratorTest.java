@@ -1,5 +1,6 @@
 package com.spartaglobal.sorting.tests.models.utils;
 
+import com.spartaglobal.sorting.models.sortableObjects.Rectangle;
 import com.spartaglobal.sorting.models.utils.Generator;
 import org.junit.jupiter.api.Test;
 
@@ -52,9 +53,16 @@ public class GeneratorTest {
     }
 
     @Test
-    public void returnMostRecentUnsortedArrayTest() {
+    public void returnMostRecentUnsortedIntArrayTest() {
         Generator myGen = new Generator();
         int[] array = myGen.generateIntArray(10);
         assertEquals(array, myGen.getMostRecentUnsortedIntArray());
+    }
+
+    @Test
+    public void returnMostRecentUnsortedObjectArrayTest() {
+        Generator myGen = new Generator();
+        Rectangle[] array = myGen.generateRectArray(10);
+        assertEquals(array, myGen.getMostRecentUnsortedObjectArray());
     }
 }

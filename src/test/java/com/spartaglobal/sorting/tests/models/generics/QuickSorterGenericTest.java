@@ -97,7 +97,7 @@ public class QuickSorterGenericTest {
     }
 
     @Test
-    public void theGenericSortWithIntProblem () {
+    public void quickSortGenericsLen5VariedTypes() {
         Generator gen = new Generator();
         Person[] personsArray = new Person[] {
                 new Person(1, "Jeff", 175),

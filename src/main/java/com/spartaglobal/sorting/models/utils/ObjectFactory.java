@@ -19,14 +19,14 @@ public class ObjectFactory {
         System.out.println("Sort type chosen, sorter object created.");
         return mySortType;
     }
-    public static SortableGenerics createGenericSortObject(String choice) {
-        SortableGenerics mySortType;
+    public static GenericSortable createGenericSortObject(String choice) {
+        GenericSortable mySortType;
         switch(choice.toLowerCase()) {
             case "b" -> mySortType = new BubbleSorterGeneric();
             case "m" -> mySortType = new MergeSorterGeneric<>();
             case "q" -> mySortType = new QuickSorterGeneric<>();
             case "i" -> mySortType = new InsertionSorterGeneric();
-            // Default to mergeSort - but I also want to keep it specifically defined.
+            // Default to mergeSort
             default -> mySortType = new MergeSorterGeneric<>();
         }
         System.out.println("Sort type chosen, sorter object created.");

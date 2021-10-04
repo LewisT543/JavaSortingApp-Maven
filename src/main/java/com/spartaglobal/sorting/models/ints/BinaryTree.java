@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class BinaryTree {
     /* Nicest implementation of a BST I could find. Potentially a little too clever but it does allow for
     expansion of functionality as indexes are stored. Size is also stored which is useful for creating arrays
-    from Trees. Have only implemented inOrder traversal as we only want an ordered int[] array for the scope
+    from Trees. I have only implemented inOrder traversal as we only want an ordered int[] array for the scope
     of this program. */
     public static class Node {
         private Integer key;
@@ -76,6 +76,7 @@ public class BinaryTree {
         if (node == null)
             return new Node(key, index);
         int cmp = Integer.valueOf(key).compareTo(node.key);
+        // Swap here
         if (cmp < 0)
             node.left = put(node.left, key, index);
         else if (cmp >= 0) // <--- Don't know why intelliJ doesn't like this, but it works - no more dupe deletion.

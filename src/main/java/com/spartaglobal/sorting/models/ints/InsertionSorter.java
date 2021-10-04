@@ -7,6 +7,7 @@ public class InsertionSorter implements Sortable {
             int key = arr[i];
             int j = i - 1;
             while (j >= 0 && arr[j] > key) {
+                // Swap here
                 arr[j + 1] = arr[j];
                 j = j - 1;
             }

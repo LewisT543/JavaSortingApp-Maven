@@ -26,7 +26,7 @@ public class MergeSorter implements Sortable {
 
         for (int i = low; i < high + 1; i++) {
             if (leftIndex < leftArray.length && rightIndex < rightArray.length) {
-                // Make the comparison + do the swap
+                // Swap here
                 if (leftArray[leftIndex] < rightArray[rightIndex]) {
                     array[i] = leftArray[leftIndex];
                     leftIndex++;

@@ -5,15 +5,17 @@
 // // NEW IDEA: keep key as an int, which is derived from a given object property?
 // // Better yet, use getHashCode() to allocate a value to the key. This allows me to independently allocate a method
 // // of producing the correct size hashcode based on the sort criteria.
-// // e.g. if p1 has a name "ABCCD" + P2.name = "ZGHYF". person1.getHashCode() -> 001432, p2.getHashCode() -> 602365.
+// // EXAMPLE: if p1.name = "ABCCD" and P2.name = "ZGHYF". Then person1.hashCode() -> 204673, p2.hashCode() -> 602365.
 // // This is going to require a custom algorithm for each type of object I want compatible with a BinarySearchTree.
-// // FURTHER UPDATE: this IS how to do it, but i just can't put together a hashing function that is small enough
-// // to return an integer...
-// // But apart from that, this is a working implementation of a binary sort tree where each node is able to carry
+//
+// // FURTHER UPDATE: this IS how to do it, but i just can't put together a hashing function that is short enough
+// // to return an integer size number.
+// // But apart from that, this is an implementation of a binary sort tree where each node is able to carry
 // // an object of <T> type, and determine its own key using hashCodes().
+// // SOLUTION: Implement a minimum hash function with order preservation. Research suggests CHM or MD5 could be suitable
+// // hashing functions for this purpose. This could take some time considering the complexity of these choices.
 //
-//
-//public class BinaryTree2 <T extends Comparable<T>> implements SortableGenerics {
+//public class BinaryTree2 <T extends Comparable<T>> implements GenericSortable {
 //    @Override
 //    public <E extends Comparable<E>> void sort(E[] arr) {
 //        // Sort goes here - base call
@@ -96,6 +98,7 @@
 //    private TreeNode<T> put(TreeNode<T> node, T obj, int index) {
 //        if (node == null)
 //            return new TreeNode<T>(obj, index);
+//        // Swap here
 //        long cmp = Long.compare(obj.hashCode(), node.key);
 //        if (cmp < 0)
 //            node.left = put(node.left, obj, index);

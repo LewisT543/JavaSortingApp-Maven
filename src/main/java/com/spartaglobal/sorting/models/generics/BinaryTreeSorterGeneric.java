@@ -1,6 +1,6 @@
 //package com.spartaglobal.sorting.models.generics;
 //
-//public class BinaryTreeSorterGeneric <T extends Comparable<T>> implements SortableGenerics {
+//public class BinaryTreeSorterGeneric <T extends Comparable<T>> implements GenericSortable {
 //    @Override
 //    public <E extends Comparable<E>> void sort(E[] array) {
 //        BinaryTree2<T> bTree = createBinaryTree((T[]) array);
